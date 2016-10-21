@@ -48,3 +48,55 @@ if (attackTroops == 3) and (defendTroops == 2):
             print("Defender loses 1 army")
         elif defendHighest2 > attackHighest2:
             print("Attacker loses 1 army")
+if (attackTroops == 3) and (defendTroops == 1):
+    print("Attacker {} -- {} Defender\nAttacker {}\nAttacker {}".format(attackHighest1,defendHighest1,attackHighest2,attackHighest3))
+    if (attackHighest1 == defendHighest1):
+        print("Attacker loses 1 army")
+    elif attackHighest1 > defendHighest1:
+        print("Defender loses 1 army")
+    elif defendHighest1 > attackHighest1:
+        print("Attacker loses 1 army")
+if (attackTroops == 2) and (defendTroops == 2):
+    print("Attacker {} -- {} Defender\nAttacker {} -- {} Defender".format(attackHighest1,defendHighest1,attackHighest2,defendHighest2))
+    if (attackHighest1 == defendHighest1):
+        print("Attacker loses 1 army")
+        if attackHighest2 > defendHighest2:
+            print("Defender loses 1 army")
+        elif defendHighest2 > attackHighest2:
+            print("Attacker loses 1 army")
+        elif attackHighest2 == defendHighest2:
+            print("Attacker loses 1 army")
+    elif (attackHighest2 == defendHighest2):
+        print("Attacker loses 1 army")
+        if attackHighest1 > defendHighest1:
+            print("Defender loses 1 army")
+        elif defendHighest1 > attackHighest1:
+            print("Attacker loses 1 army")
+    elif attackHighest1 > defendHighest1:
+        print("Defender loses 1 army")
+        if attackHighest2 > defendHighest2:
+            print("Defender loses 1 army")
+        elif defendHighest2 > attackHighest2:
+            print("Attacker loses 1 army")
+    elif defendHighest1 > attackHighest1:
+        print("Attacker loses 1 army")
+        if attackHighest2 > defendHighest2:
+            print("Defender loses 1 army")
+        elif defendHighest2 > attackHighest2:
+            print("Attacker loses 1 army")
+if (attackTroops == 1) and (defendTroops == 2):
+    print("Attacker {} -- {} Defender\n           -- {} Defender".format(attackHighest1,defendHighest1,defendHighest2))
+    if (attackHighest1 == defendHighest1):
+        print("Attacker loses 1 army")
+    elif attackHighest1 > defendHighest1:
+        print("Defender loses 1 army")
+    elif defendHighest1 > attackHighest1:
+        print("Attacker loses 1 army")
+if (attackTroops == 1) and (defendTroops == 1):
+    print("Attacker {} -- {} Defender".format(attackHighest1,defendHighest1))
+    if (attackHighest1 == defendHighest1):
+        print("Attacker loses 1 army")
+    elif attackHighest1 > defendHighest1:
+        print("Defender loses 1 army")
+    elif defendHighest1 > attackHighest1:
+        print("Attacker loses 1 army")
