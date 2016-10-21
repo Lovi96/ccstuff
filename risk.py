@@ -24,11 +24,15 @@ if (attackTroops == 3) and (defendTroops == 2):
     print("Attacker {} -- {} Defender\nAttacker {} -- {} Defender\nAttacker {}".format(attackHighest1,defendHighest1,attackHighest2,defendHighest2,attackHighest3))
     if attackHighest1 > defendHighest1:
         print("Defender loses 1 army")
+        if attackHighest2 > defendHighest2:
+            print("Defender loses 1 army")
+        elif defendHighest2 > attackHighest2:
+            print("Attacker loses 1 army")
     elif defendHighest1 > attackHighest1:
         print("Attacker loses 1 army")
-    elif attackHighest2 > defendHighest2:
-        print("Defender loses 1 army")
-    elif defendHighest2 > attackHighest2:
-        print("Attacker loses 1 army")
+        if attackHighest2 > defendHighest2:
+            print("Defender loses 1 army")
+        elif defendHighest2 > attackHighest2:
+            print("Attacker loses 1 army")
     elif (attackHighest1 == defendHighest1) or (attackHighest2 == defendHighest2):
         print("Attacker loses 1 army")
