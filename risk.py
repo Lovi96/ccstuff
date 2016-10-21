@@ -3,8 +3,8 @@ print("Welcome to the Risk dice manager!")
 while True:
     try:
         print("\nEnter a letter to exit the script\n\n")
-        attackTroops = int(input("Number of attacking troops?(1-3) "))
-        defendTroops = int(input("Number of defending troops?(1-2) "))
+        attackTroops = int(input("Number of attacking troops(1-3): "))
+        defendTroops = int(input("Number of defending troops(1-2): "))
         attackNum1 = random.randrange(1,7)
         attackNum2 = random.randrange(1,7)
         attackNum3 = random.randrange(1,7)
