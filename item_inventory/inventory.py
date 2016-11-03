@@ -29,7 +29,7 @@ def addToInventory(inventory,addedItems):
             inv.update({k:1})       
 def printTable(inventory):
     sorting = input(str("Descending or Ascending sort (D/A): "))
-    sorting = sorting.upper()
+    sorting = sorting[0].upper()
     if sorting == "D":
         orderSorted(inv)
     elif sorting == "A":
