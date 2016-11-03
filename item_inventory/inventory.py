@@ -1,67 +1,60 @@
 import order
 from order import *
-import save_load
-from save_load import *
-
-
+import save
+from save import *
 inv = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby', 'dragon meat']
-
-
-def display_inventory(action):
-
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby', 'dragon meat']
+def controls():
+    print("\nC for inventory\nO to sort inventory\nA for adding loot\nS to save inventory to .csv\nM to merge existing inventory with a predefined .csv\nQ to exit\n")
+def allItems(inventory):   
     allItems = 0
-
-    for k, v  in inv.items():
-        print(v," ", k)
-
+    for v in inv.values():
         if allItems == 0:
             allItems = v
         else:
-            allItems = allItems + v
-        
-    print("total number of items: ", allItems)
-
-
-def add_to_inventory(inventory,added_items):
-
-    for k in dragon_loot:
-
+            allItems = int(allItems)
+            v = int(v)
+            allItems = allItems + v    
+    print("Total: ", allItems)
+def displayInventory(action):
+    for k, v  in inv.items():
+        print(v," ", k)    
+    allItems(inv)
+    print()
+def addToInventory(inventory,addedItems):
+    for k in dragonLoot:
         if k in inv:
-            inv[k] +=1
-
+            inv[k] = int(inv[k]) + 1
         else:
-            inv.update({k:1})
-
-       
-def print_table(inventory):
-
-    sorting = input(str("how would you like your inventory? "))
-
-    if sorting == "Desc":
-        order_sorted(inv)
-
-    elif sorting == "Asc":
-        order_reversed(inv)
-
+            inv.update({k:1})       
+def printTable(inventory):
+    sorting = input(str("Descending or Ascending sort (D/A): "))
+    sorting = sorting.upper()
+    if sorting == "D":
+        orderSorted(inv)
+    elif sorting == "A":
+        orderReversed(inv)
     else:
-        order_default(inv)
-
-
+        orderDefault(inv)
 while True:
-    action = "L" #(input("what do you want to do? : "))
-
+    action = (input("What would you like to do?(press H for help) : "))
+    action = action[0].upper()
     if action == "C":
-        display_inventory(action)
-
-    elif action == "A":
-        add_to_inventory(inv, dragon_loot)
-
+        print("\nHere you go chief:\n ")
+        displayInventory(action)
     elif action == "O":
-        print_table(inv)
-    elif action == "L":
-        load_inventory('import_inventory.csv')
-        impinv ={}
-        impinv = load_inventory('import_inventory.csv')
-        merge_imported_list(inv, impinv)
-        #inv = dict(mergedinv)
+        printTable(inv)
+    elif action == "A":
+        addToInventory(inv, dragonLoot)
+        print("Dragon loot has been added.")
+    elif action == "S":
+        saveInventory(inv, 'savedInventory.csv')
+        allItems(inv)
+    elif action == "H":
+        controls()
+    elif action == "M":
+        impinv = {}
+        impinv = importInventory('mergeInventory.csv')
+        inv = mergeImportedList(inv, impinv)
+    elif action == "Q":
+        quit()
