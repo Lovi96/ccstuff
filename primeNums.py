@@ -1,6 +1,7 @@
 def is_prime(number):
     if number == 0:
         print("ZÉRÓ")
+        return False
     for num in range(2, number - 1):
         if number % num == 0:
             return False
