@@ -1,6 +1,3 @@
-import random
-
-
 def fill_list_of_nums(how_many_nums):
     # Fills a list with given number of multiples of 10.
     list_of_nums = []

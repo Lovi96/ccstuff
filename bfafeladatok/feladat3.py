@@ -1,6 +1,3 @@
-import random
-
-
 def get_nums():
     # Gets numbers from user standard input.
     list_of_nums = []
