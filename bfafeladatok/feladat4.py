@@ -11,13 +11,13 @@ def sum_dividable_by_20(list_of_nums):
     # Print the sum of all 20 dividable numbers from a give list.
     sum_of_divisible_nums = 0
     for num in list_of_nums:
-        if num % 20:
+        if num % 20 == 0:
             sum_of_divisible_nums += num
     print("Summation of number divisible by 20 is: " + str(sum_of_divisible_nums))
 
 
 def main():
-    number_list = fill_list_of_nums(20)
+    number_list = fill_list_of_nums(10)
     sum_dividable_by_20(number_list)
 
 if __name__ == "__main__":
